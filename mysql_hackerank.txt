@@ -1,0 +1,237 @@
+Problem: Revising the Select Query I
+------------------------------------
+select * from city where population > 100000 AND countrycode = 'USA'
+
+----------------------------------------
+
+
+Problem: Revising the Select Query II
+
+------------------------------------
+select name from city where population > 120000 AND countrycode = 'USA'
+
+----------------------------------------
+
+
+Problem: Select All
+
+------------------------------------
+select * from city
+
+----------------------------------------
+
+
+Problem: Select By ID
+
+------------------------------------
+select * from city where ID=1661
+
+----------------------------------------
+
+
+
+Problem: Japanese Cities' Attributes
+
+-------------------------------------------
+select * from city where COUNTRYCODE = 'JPN'
+
+----------------------------------------
+
+
+Problem: Weather Observation Station 1
+
+------------------------------------
+select city,state from station
+
+----------------------------------------
+
+
+
+Problem: Weather Observation Station 3
+
+------------------------------------
+select Distinct city from station where ID  % 2 = 0
+
+----------------------------------------
+
+
+
+
+Problem: Weather Observation Station 4
+
+------------------------------------
+select (count(city)-count(distinct city)) from station
+
+----------------------------------------
+
+
+Problem: Weather Observation Station 5
+
+
+------------------------------------
+Select City, Length(City) From Station Order by Length(City), City Limit 1;
+
+Select City, Length(City) From Station Order by Length(City) DESC, City Limit 1;
+
+----------------------------------------
+
+
+Problem: Weather Observation Station 6
+
+
+------------------------------------
+select distinct city from station where city LIKE 'A%'
+or city LIKE 'E%'
+OR city LIKE 'I%'
+OR city LIKE 'O%'
+OR city LIKE 'U%'
+OR city LIKE 'a%'
+OR city LIKE 'e%'
+OR city LIKE 'i%'
+OR city LIKE 'o%'
+OR city LIKE 'u%';
+
+----------------------------------------
+
+
+Problem: Weather Observation Station 7
+
+
+------------------------------------
+
+select distinct city from station where city LIKE '%A'
+or city LIKE '%E'
+OR city LIKE '%I'
+OR city LIKE '%O'
+OR city LIKE '%U'
+OR city LIKE '%a'
+OR city LIKE '%e'
+OR city LIKE '%i'
+OR city LIKE '%o'
+OR city LIKE '%u';
+
+----------------------------------------
+
+
+
+Problem: Weather Observation Station 8
+
+
+------------------------------------
+select distinct city from station where city Regexp '^[aeiou].*[aeiou]$'
+
+----------------------------------------
+
+
+
+
+Problem: Weather Observation Station 9
+
+
+------------------------------------
+select distinct city from station where city not RLIKE '^[aeiou].*'
+
+----------------------------------------
+
+
+
+
+Problem: Weather Observation Station 11
+
+
+------------------------------------
+select distinct city from station where city not RLIKE '^[aeiou].*[aeiou]$'
+
+----------------------------------------
+
+
+
+
+Problem: Weather Observation Station 12
+
+
+------------------------------------
+select distinct city from station where city  Regexp '^[^AEIOU].*[^aeiou]$'
+
+----------------------------------------
+
+
+
+Problem: Higher Than 75 Marks
+
+
+------------------------------------
+SELECT                NAME
+FROM                  STUDENTS
+WHERE                 MARKS > 75
+ORDER BY              SUBSTRING(NAME, -3), ID ASC;
+
+----------------------------------------
+
+
+
+Problem: Employee Names
+
+
+
+------------------------------------
+select name from employee order by name ASC
+
+----------------------------------------
+
+
+
+Problem: Employee Salaries
+
+
+------------------------------------
+select name from employee order by name ASCEmployee Salaries
+
+
+----------------------------------------
+
+
+
+
+
+Problem: Revising Aggregations
+
+
+------------------------------------
+select count(ID) from CITY where population > 100000
+select sum(population) from CITY where district = 'California'
+select AVG(population) from CITY where district = 'California'
+----------------------------------------
+
+
+
+
+Problem: Population
+
+
+------------------------------------
+select FLOOR(AVG(population))from CITY 
+select sum((population))from CITY where COUNTRYCODE ='JPN'
+select (max(population) - min(population)) from city
+----------------------------------------
+
+
+
+Problem: Asian Population
+
+------------------------------------
+select sum(city.population) from city INNER JOIN country on CITY.CountryCode= COUNTRY.Code and country.continent = 'Asia'
+----------------------------------------
+
+
+Problem: African Cities
+
+------------------------------------
+select (city.Name) from city INNER JOIN country on CITY.CountryCode= COUNTRY.Code and country.continent = 'Africa'
+----------------------------------------
+
+
+
+
+
+
